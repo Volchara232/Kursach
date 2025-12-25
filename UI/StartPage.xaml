@@ -1,0 +1,91 @@
+﻿<Page x:Class="Sem3_kurs.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Главная">
+
+    <Grid Background="#fafafa">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBlock Text="Риэлторское агентство" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#2c3e50"
+                       Margin="0,0,0,20"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Информационная система управления" 
+                       FontSize="16"
+                       Foreground="#7f8c8d"
+                       Margin="0,0,0,40"
+                       HorizontalAlignment="Center"/>
+
+            <Border BorderBrush="#3498db" 
+                    BorderThickness="2" 
+                    CornerRadius="10" 
+                    Padding="20" 
+                    Background="White"
+                    Width="400">
+
+                <StackPanel>
+                    <TextBlock Text="Быстрый доступ:" 
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,10"/>
+
+                    <Button Content="Список клиентов" 
+                            Tag="Clients"
+                            Margin="0,5"
+                            Padding="15,8"
+                            Background="#3498db"
+                            Foreground="White"
+                            FontSize="14"
+                            HorizontalAlignment="Left"
+                            Cursor="Hand"
+                            Click="MenuButton_Click"/>
+
+                    <Button Content="Список объектов" 
+                            Tag="Properties"
+                            Margin="0,5"
+                            Padding="15,8"
+                            Background="#3498db"
+                            Foreground="White"
+                            FontSize="14"
+                            HorizontalAlignment="Left"
+                            Cursor="Hand"
+                            Click="MenuButton_Click"/>
+
+                    <Button Content="Статистика" 
+                            Tag="Statistics"
+                            Margin="0,5"
+                            Padding="15,8"
+                            Background="#3498db"
+                            Foreground="White"
+                            FontSize="14"
+                            HorizontalAlignment="Left"
+                            Cursor="Hand"
+                            Click="MenuButton_Click"/>
+
+                    <Separator Margin="0,15"/>
+
+                    <TextBlock Text="Статистика системы:" 
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,10"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Всего клиентов: " 
+                                   Foreground="#666"/>
+                        <TextBlock x:Name="ClientsCount" 
+                                   Text="0" 
+                                   FontWeight="Bold"
+                                   Margin="5,0,20,0"/>
+
+                        <TextBlock Text="Активные заявки: " 
+                                   Foreground="#666"/>
+                        <TextBlock x:Name="ActiveOrdersCount" 
+                                   Text="0" 
+                                   FontWeight="Bold"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

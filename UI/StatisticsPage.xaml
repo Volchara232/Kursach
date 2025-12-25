@@ -1,0 +1,55 @@
+﻿<Page x:Class="Sem3_kurs.StatisticsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Статистика"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Статистика агентства" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <!-- Статистика -->
+        <StackPanel Grid.Row="1" Margin="10">
+            <GroupBox Header="Популярность категорий" Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock x:Name="TxtPopularByDemand" 
+                               Margin="0,5"/>
+                    <TextBlock x:Name="TxtPopularByOffers" 
+                               Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Прибыль" Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock x:Name="TxtTotalProfit" 
+                               Margin="0,5"/>
+                    <Button Content="Рассчитать прибыль за период" 
+                            Padding="10,5"
+                            Click="BtnCalculateProfit_Click"
+                            Margin="0,10,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Общая статистика">
+                <StackPanel Margin="5">
+                    <TextBlock x:Name="TxtTotalDeals" 
+                               Margin="0,5"/>
+                    <TextBlock x:Name="TxtTotalClients" 
+                               Margin="0,5"/>
+                    <TextBlock x:Name="TxtTotalProperties" 
+                               Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>
