@@ -3,50 +3,56 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Клиенты">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <!-- Заголовок и кнопки -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
-            <TextBlock Text="Клиенты" 
-                       FontSize="18" 
-                       FontWeight="Bold" 
+		<!-- Заголовок и кнопки -->
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+			<TextBlock Text="Клиенты"
+                       FontSize="18"
+                       FontWeight="Bold"
                        VerticalAlignment="Center"/>
 
-            <Button Content="Добавить клиента" 
-                    Margin="20,0,0,0" 
+			<Button Content="Добавить клиента"
+                    Margin="20,0,0,0"
                     Padding="10,5"
                     Click="BtnAddClient_Click"/>
 
-            <Button Content="Поиск по фамилии" 
-                    Margin="10,0,0,0" 
+			<Button Content="Поиск по фамилии"
+                    Margin="10,0,0,0"
                     Padding="10,5"
                     Click="BtnSearch_Click"/>
-        </StackPanel>
 
-        <!-- Список клиентов -->
-        <ListView Grid.Row="1" 
-                  x:Name="ClientsListView" 
-                  Margin="10">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ФИО" 
-                                    DisplayMemberBinding="{Binding FullName}" 
+			<Button Content="Показать детали"
+                    Margin="10,0,0,0"
+                    Padding="10,5"
+                    Click="BtnViewDetails_Click"/>
+		</StackPanel>
+
+		<!-- Список клиентов -->
+		<ListView Grid.Row="1"
+                  x:Name="ClientsListView"
+                  Margin="10"
+                  MouseDoubleClick="ClientsListView_MouseDoubleClick">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="ФИО"
+                                    DisplayMemberBinding="{Binding FullName}"
                                     Width="200"/>
-                    <GridViewColumn Header="Телефон" 
-                                    DisplayMemberBinding="{Binding Phone}" 
+					<GridViewColumn Header="Телефон"
+                                    DisplayMemberBinding="{Binding Phone}"
                                     Width="120"/>
-                    <GridViewColumn Header="Email" 
-                                    DisplayMemberBinding="{Binding Email}" 
+					<GridViewColumn Header="Email"
+                                    DisplayMemberBinding="{Binding Email}"
                                     Width="150"/>
-                    <GridViewColumn Header="Активных заявок" 
-                                    DisplayMemberBinding="{Binding ActiveOrdersCount}" 
-                                    Width="100"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </Grid>
+					<GridViewColumn Header="Заявок"
+                                    DisplayMemberBinding="{Binding Orders.Count}"
+                                    Width="60"/>
+				</GridView>
+			</ListView.View>
+		</ListView>
+	</Grid>
 </Page>

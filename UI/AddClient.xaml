@@ -1,0 +1,73 @@
+﻿<Window x:Class="Sem3_kurs.AddClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация нового клиента"
+        Height="450"
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" 
+                   Text="Регистрация клиента" 
+                   FontSize="18" 
+                   FontWeight="Bold" 
+                   Margin="0,0,0,15"/>
+
+        <!-- Форма -->
+        <StackPanel Grid.Row="1">
+            <GroupBox Header="Личные данные" Margin="0,0,0,10">
+                <StackPanel Margin="5">
+                    <TextBlock Text="ФИО*" Margin="0,0,0,2"/>
+                    <TextBox x:Name="TxtFullName" 
+                             Height="25"
+                             Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Адрес" Margin="0,5,0,2"/>
+                    <TextBox x:Name="TxtAddress" 
+                             Height="25"
+                             Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Телефон*" Margin="0,5,0,2"/>
+                    <TextBox x:Name="TxtPhone" 
+                             Height="25"
+                             Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Email" Margin="0,5,0,2"/>
+                    <TextBox x:Name="TxtEmail" 
+                             Height="25"
+                             Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Регистрационный номер" Margin="0,5,0,2"/>
+                    <TextBox x:Name="TxtRegistrationNumber" 
+                             Height="25"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,15,0,0">
+            <Button Content="Отмена" 
+                    Width="80" 
+                    Height="30"
+                    Margin="0,0,10,0"
+                    Click="BtnCancel_Click"/>
+
+            <Button Content="Сохранить" 
+                    Width="80" 
+                    Height="30"
+                    IsDefault="True"
+                    Click="BtnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

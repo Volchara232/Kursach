@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pECu9ITSo0Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\1\\source\\repos\\Kursach\\Kursach\\Kursach.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\1\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.57\\microsoft.windows.sdk.net.ref.10.0.17763.57.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,108 @@
+﻿<Window x:Class="Sem3_kurs.ClientDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Информация о клиенте"
+        Height="500"
+        Width="600"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+            <TextBlock Text="Клиент: " 
+                       FontSize="16" 
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="TxtClientName"
+                       FontSize="16" 
+                       FontWeight="Bold"
+                       Foreground="#3498db"/>
+        </StackPanel>
+
+        <!-- Вкладки -->
+        <TabControl Grid.Row="1">
+            <!-- Основная информация -->
+            <TabItem Header="Основная информация">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Телефон:" Margin="0,5" FontWeight="Bold"/>
+                    <TextBlock x:Name="TxtPhone" Grid.Row="0" Grid.Column="1" Margin="10,5"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Адрес:" Margin="0,5" FontWeight="Bold"/>
+                    <TextBlock x:Name="TxtAddress" Grid.Row="1" Grid.Column="1" Margin="10,5"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Email:" Margin="0,5" FontWeight="Bold"/>
+                    <TextBlock x:Name="TxtEmail" Grid.Row="2" Grid.Column="1" Margin="10,5"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Рег. номер:" Margin="0,5" FontWeight="Bold"/>
+                    <TextBlock x:Name="TxtRegNumber" Grid.Row="3" Grid.Column="1" Margin="10,5"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Всего заявок:" Margin="0,5" FontWeight="Bold"/>
+                    <TextBlock x:Name="TxtTotalOrders" Grid.Row="4" Grid.Column="1" Margin="10,5"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Заявки клиента -->
+            <TabItem Header="Заявки">
+                <ListView x:Name="OrdersListView" Margin="5">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                            <GridViewColumn Header="Тип" DisplayMemberBinding="{Binding RequestType}" Width="100"/>
+                            <GridViewColumn Header="Район" DisplayMemberBinding="{Binding District}" Width="120"/>
+                            <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status}" Width="120"/>
+                            <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding CreatedDate, StringFormat=d}" Width="100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+
+            <!-- Активные заявки -->
+            <TabItem Header="Активные заявки">
+                <ListView x:Name="ActiveOrdersListView" Margin="5">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="50"/>
+                            <GridViewColumn Header="Тип" DisplayMemberBinding="{Binding RequestType}" Width="100"/>
+                            <GridViewColumn Header="Район" DisplayMemberBinding="{Binding District}" Width="120"/>
+                            <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding CreatedDate, StringFormat=d}" Width="100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,15,0,0">
+            <Button Content="Добавить заявку" 
+                    Width="120" 
+                    Height="30"
+                    Margin="0,0,10,0"
+                    Click="BtnAddOrder_Click"/>
+
+            <Button Content="Закрыть" 
+                    Width="80" 
+                    Height="30"
+                    Click="BtnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
