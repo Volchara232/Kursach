@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 C:\Users\1\source\repos\Kursach\Kursach\App.xaml
-10-1409522994
+17-18550953
 
-301950062546
+42-498868366
 2022089290878
-UI\AddClient.xaml;UI\ClientDetailsWindow.xaml;UI\ClientsPage.xaml;UI\MainWindow.xaml;UI\OrdersPage.xaml;UI\OwnersPage.xaml;UI\PropertiesPage.xaml;UI\SearchWindow.xaml;UI\StartPage.xaml;UI\StatisticsPage.xaml;
+UI\ClientUI\AddClient.xaml;UI\ClientUI\ClientDetailsWindow.xaml;UI\ClientUI\ClientsPage.xaml;UI\ClientUI\SelectClientWindow.xaml;UI\Deal\CreateDealWindow.xaml;UI\MainWindow.xaml;UI\Menu\ProfitPeriodWindow.xaml;UI\Menu\StartPage.xaml;UI\Menu\StatisticsPage.xaml;UI\Order\AddOrderWindow.xaml;UI\Order\OrdersPage.xaml;UI\Order\SearchWindow.xaml;UI\Owner\AddOwnerWindow.xaml;UI\Owner\OwnersPage.xaml;UI\Property\AddPropertyWindow.xaml;UI\Property\PropertiesPage.xaml;UI\Property\SelectPropertyWindow.xaml;
 
 False
 

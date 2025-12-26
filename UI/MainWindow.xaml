@@ -36,6 +36,8 @@
                     Padding="10,5" 
                     Click="BtnProperties_Click"/>
 
+
+
             <Button x:Name="BtnOrders" 
                     Content="Заявки" 
                     Margin="5" 

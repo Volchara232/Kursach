@@ -1,0 +1,27 @@
+{
+  "$id": "1",
+  "Clients": {
+    "$id": "2",
+    "$values": []
+  },
+  "Owners": {
+    "$id": "3",
+    "$values": []
+  },
+  "Properties": {
+    "$id": "4",
+    "$values": []
+  },
+  "Orders": {
+    "$id": "5",
+    "$values": []
+  },
+  "Deals": {
+    "$id": "6",
+    "$values": []
+  },
+  "Receipts": {
+    "$id": "7",
+    "$values": []
+  }
+}

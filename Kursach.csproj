@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Page Update="UI\ClientDetailsWindow.xaml">
+    <Page Update="UI\ClientUI\ClientDetailsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

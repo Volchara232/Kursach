@@ -1,0 +1,98 @@
+﻿<Page x:Class="Sem3_kurs.ClientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Клиенты">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Простая панель управления -->
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+			<TextBlock Text="Клиенты"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"/>
+
+			<Button Content="➕ Добавить клиента"
+                    Margin="20,0,0,0"
+                    Padding="10,5"
+                    Click="BtnAddClient_Click"
+                    Background="#2ecc71"
+                    Foreground="White"/>
+		</StackPanel>
+
+		<!-- Таблица клиентов с inline-редактированием -->
+		<DataGrid Grid.Row="1"
+                  x:Name="ClientsDataGrid"
+                  Margin="10"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="True"
+                  ItemsSource="{Binding}"
+                  PreviewKeyDown="ClientsDataGrid_PreviewKeyDown">
+
+			<DataGrid.Columns>
+				<!-- ФИО -->
+				<DataGridTextColumn Header="ФИО"
+                                    Binding="{Binding FullName, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="200">
+					<DataGridTextColumn.ElementStyle>
+						<Style TargetType="TextBlock">
+							<Setter Property="TextWrapping" Value="Wrap"/>
+						</Style>
+					</DataGridTextColumn.ElementStyle>
+				</DataGridTextColumn>
+
+				<!-- Телефон -->
+				<DataGridTextColumn Header="Телефон"
+                                    Binding="{Binding Phone, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="120"/>
+
+				<!-- Email -->
+				<DataGridTextColumn Header="Email"
+                                    Binding="{Binding Email, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="150"/>
+
+				<!-- Адрес -->
+				<DataGridTextColumn Header="Адрес"
+                                    Binding="{Binding Address, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="200">
+					<DataGridTextColumn.ElementStyle>
+						<Style TargetType="TextBlock">
+							<Setter Property="TextWrapping" Value="Wrap"/>
+						</Style>
+					</DataGridTextColumn.ElementStyle>
+				</DataGridTextColumn>
+
+				<!-- Регистрационный номер -->
+				<DataGridTextColumn Header="Рег. номер"
+                                    Binding="{Binding RegistrationNumber, UpdateSourceTrigger=PropertyChanged}"
+                                    Width="100"/>
+			</DataGrid.Columns>
+
+			<!-- Подсветка строк с ошибками -->
+			<DataGrid.RowStyle>
+				<Style TargetType="DataGridRow">
+					<Style.Triggers>
+						<DataTrigger Binding="{Binding IsValid}" Value="False">
+							<Setter Property="Background" Value="#FFF0F0"/>
+							<Setter Property="ToolTip" Value="Исправьте ошибки в данных"/>
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</DataGrid.RowStyle>
+
+			<!-- Подсказка для пользователя -->
+			<DataGrid.ToolTip>
+				<TextBlock>
+					<Run Text="• Двойной клик по ячейке - редактирование"/>
+					<LineBreak/>
+					<Run Text="• Выделите строку и нажмите Delete для удаления"/>
+				</TextBlock>
+			</DataGrid.ToolTip>
+		</DataGrid>
+	</Grid>
+</Page>

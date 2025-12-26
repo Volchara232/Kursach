@@ -100,7 +100,7 @@ namespace Sem3_kurs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Kursach;component/ui/statisticspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Kursach;V1.0.0.0;component/ui/statisticspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\UI\StatisticsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
